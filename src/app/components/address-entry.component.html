@@ -1,0 +1,26 @@
+<h1>Input Address</h1>
+
+<form #form="ngForm" (ngSubmit)="processForm()">
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td><input type="text" name="name" required ngModel></td>
+    </tr>
+    <tr>
+        <td>Phone:</td>
+        <td><input type="text" name="phone" ng-minlength="3" required ngModel></td>
+      </tr>
+      <tr>
+          <td>Email:</td>
+          <td><input type="text" name="email" required email ngModel></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><button type="submit" [disabled]="form.invalid">Add</button></td>          
+        </tr>
+        <p>
+          valid:{{form.valid}}
+          invalid:{{form.invalid}}
+        </p>
+  </table>
+</form>
